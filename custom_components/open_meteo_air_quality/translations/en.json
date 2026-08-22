@@ -1,0 +1,46 @@
+{
+  "title": "Open-Meteo Air Quality",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add air quality location",
+        "description": "Create air quality sensors using Open-Meteo. Home Assistant's coordinates are used by default.",
+        "data": {
+          "location_name": "Location name",
+          "latitude": "Latitude",
+          "longitude": "Longitude"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This location is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Open-Meteo Air Quality options",
+        "data": {
+          "update_interval": "Update interval (minutes)",
+          "forecast_hours": "Hourly forecast entries per sensor"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "european_aqi": {"name": "European AQI"},
+      "pm10": {"name": "Coarse Particulate Matter"},
+      "pm2_5": {"name": "Fine Particulate Matter"},
+      "carbon_monoxide": {"name": "Carbon Monoxide"},
+      "carbon_dioxide": {"name": "Carbon Dioxide"},
+      "nitrogen_dioxide": {"name": "Nitrogen Dioxide"},
+      "sulphur_dioxide": {"name": "Sulphur Dioxide"},
+      "ozone": {"name": "Ozone"},
+      "aerosol_optical_depth": {"name": "Aerosol Optical Depth"},
+      "dust": {"name": "Dust"},
+      "ammonia": {"name": "Ammonia"},
+      "methane": {"name": "Methane"}
+    }
+  }
+}
