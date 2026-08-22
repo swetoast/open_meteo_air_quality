@@ -1,4 +1,5 @@
 # Open-Meteo Air Quality
+
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz/)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Integration-41BDF5.svg)](https://www.home-assistant.io/)
 
@@ -9,6 +10,7 @@ The integration creates one device for each configured location and updates all 
 ## Features
 
 - Current air-quality measurements
+- US Air Quality Index
 - European Air Quality Index
 - Hourly air-quality forecasts
 - Daily minimum, maximum, and mean summaries
@@ -24,22 +26,22 @@ The integration creates one device for each configured location and updates all 
 
 ## Sensors
 
-| Sensor | Open-Meteo variable |
-| --- | --- |
-| European AQI | `european_aqi` |
-| Coarse Particulate Matter | `pm10` |
-| Fine Particulate Matter | `pm2_5` |
-| Carbon Monoxide | `carbon_monoxide` |
-| Carbon Dioxide | `carbon_dioxide` |
-| Nitrogen Dioxide | `nitrogen_dioxide` |
-| Sulphur Dioxide | `sulphur_dioxide` |
-| Ozone | `ozone` |
-| Aerosol Optical Depth | `aerosol_optical_depth` |
-| Dust | `dust` |
-| Ammonia | `ammonia` |
-| Methane | `methane` |
+| Sensor | Open-Meteo variable | Unit |
+| --- | --- | --- |
+| Air Quality Index | `us_aqi` | AQI |
+| European Air Quality Index | `european_aqi` | EAQI |
+| Coarse Particulate Matter | `pm10` | API supplied |
+| Fine Particulate Matter | `pm2_5` | API supplied |
+| Carbon Monoxide | `carbon_monoxide` | API supplied |
+| Carbon Dioxide | `carbon_dioxide` | API supplied |
+| Nitrogen Dioxide | `nitrogen_dioxide` | API supplied |
+| Sulphur Dioxide | `sulphur_dioxide` | API supplied |
+| Ozone | `ozone` | API supplied |
+| Dust | `dust` | API supplied |
+| Ammonia | `ammonia` | API supplied |
+| Methane | `methane` | API supplied |
 
-Each sensor uses the current value as its state and includes hourly forecast and daily summary attributes. Units are taken directly from the Open-Meteo response.
+Each sensor uses the current value as its state and includes hourly forecast and daily summary attributes. Pollutant units are taken from the Open-Meteo response. The US and European air-quality indexes are displayed as AQI and EAQI respectively.
 
 ## Installation
 
