@@ -11,7 +11,7 @@
         }
       },
       "reconfigure": {
-        "title": "Reconfigure air quality location",
+        "title": "Reconfigure location",
         "data": {
           "location_name": "Location name",
           "latitude": "Latitude",
@@ -21,21 +21,21 @@
     },
     "error": {
       "cannot_connect": "Could not connect to Open-Meteo.",
-      "invalid_response": "Open-Meteo returned unusable data.",
+      "invalid_response": "Open-Meteo rejected the location or returned unusable data.",
       "already_configured": "This location is already configured."
     },
     "abort": {
-      "already_configured": "This location is already configured.",
-      "reconfigure_successful": "The location was updated."
+      "reconfigure_successful": "Location updated.",
+      "already_configured": "This location is already configured."
     }
   },
   "options": {
     "step": {
       "init": {
-        "title": "Open-Meteo Air Quality options",
+        "title": "Options",
         "data": {
           "update_interval": "Update interval (minutes)",
-          "forecast_hours": "Hourly forecast entries per sensor"
+          "forecast_hours": "Hourly forecast entries"
         }
       }
     }
@@ -77,6 +77,11 @@
       },
       "methane": {
         "name": "Methane"
+      }
+    },
+    "binary_sensor": {
+      "api_problem": {
+        "name": "API Problem"
       }
     }
   }
