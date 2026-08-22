@@ -4,7 +4,16 @@
     "step": {
       "user": {
         "title": "Add air quality location",
-        "description": "Create air quality sensors using Open-Meteo. Home Assistant's coordinates are used by default.",
+        "description": "The integration verifies the location with Open-Meteo before saving it.",
+        "data": {
+          "location_name": "Location name",
+          "latitude": "Latitude",
+          "longitude": "Longitude"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure air quality location",
+        "description": "Change the location name or coordinates. Saving reloads the existing integration.",
         "data": {
           "location_name": "Location name",
           "latitude": "Latitude",
@@ -12,14 +21,21 @@
         }
       }
     },
-    "abort": {
+    "error": {
+      "cannot_connect": "Could not connect to Open-Meteo. Check the Home Assistant log for details and try again.",
+      "invalid_response": "Open-Meteo rejected the location or returned unusable data.",
       "already_configured": "This location is already configured."
+    },
+    "abort": {
+      "already_configured": "This location is already configured.",
+      "reconfigure_successful": "The location was updated and the integration reloaded."
     }
   },
   "options": {
     "step": {
       "init": {
         "title": "Open-Meteo Air Quality options",
+        "description": "Control API polling and the amount of hourly forecast data stored on each sensor.",
         "data": {
           "update_interval": "Update interval (minutes)",
           "forecast_hours": "Hourly forecast entries per sensor"

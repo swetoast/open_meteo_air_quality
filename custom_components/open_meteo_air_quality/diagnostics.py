@@ -1,5 +1,4 @@
 """Diagnostics for Open-Meteo Air Quality."""
-
 from __future__ import annotations
 
 from typing import Any
@@ -14,7 +13,7 @@ TO_REDACT = {"latitude", "longitude"}
 async def async_get_config_entry_diagnostics(
     hass: HomeAssistant, entry: ConfigEntry
 ) -> dict[str, Any]:
-    """Return redacted diagnostics."""
+    """Return useful diagnostics without coordinates or forecast payloads."""
     coordinator = entry.runtime_data
     return {
         "entry": async_redact_data(dict(entry.data), TO_REDACT),
@@ -22,6 +21,6 @@ async def async_get_config_entry_diagnostics(
         "metadata": async_redact_data(
             dict(coordinator.data.get("metadata", {})), TO_REDACT
         ),
-        "available_variables": sorted(coordinator.data.get("current", {}).keys()),
+        "available_variables": sorted(coordinator.data.get("current", {})),
         "last_update_success": coordinator.last_update_success,
     }
