@@ -15,8 +15,12 @@ class AirQualitySensor(CoordinatorEntity,SensorEntity):
     def native_value(self): return self.coordinator.data["current"].get(self.entity_description.key)
     @property
     def native_unit_of_measurement(self):
+        if self.entity_description.key == "us_aqi":
+            return "AQI"
+        if self.entity_description.key == "european_aqi":
+            return "EAQI"
         unit=self.coordinator.data["current_units"].get(self.entity_description.key)
-        return None if unit in (None,"","undefined","AQI") else str(unit)
+        return None if unit in (None,"","undefined") else str(unit)
     @property
     def extra_state_attributes(self):
         key=self.entity_description.key; count=self._entry.options.get(CONF_FORECAST_HOURS,DEFAULT_FORECAST_HOURS)

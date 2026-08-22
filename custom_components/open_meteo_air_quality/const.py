@@ -10,7 +10,7 @@ DEFAULT_UPDATE_INTERVAL=60; DEFAULT_FORECAST_HOURS=24; FORECAST_DAYS=7
 class OpenMeteoSensorEntityDescription(SensorEntityDescription):
     """Describe a sensor."""
 SENSORS=tuple(OpenMeteoSensorEntityDescription(key=k,translation_key=k,icon=i) for k,i in (
-("european_aqi","mdi:air-filter"),("pm10","mdi:blur"),("pm2_5","mdi:blur"),
+("european_aqi","mdi:air-filter"),("us_aqi","mdi:air-filter"),("pm10","mdi:blur"),("pm2_5","mdi:blur"),
 ("carbon_monoxide","mdi:molecule-co"),("carbon_dioxide","mdi:molecule-co2"),
 ("nitrogen_dioxide","mdi:molecule"),("sulphur_dioxide","mdi:molecule"),
 ("ozone","mdi:molecule"),("dust","mdi:weather-dust"),("ammonia","mdi:molecule"),("methane","mdi:molecule")))
